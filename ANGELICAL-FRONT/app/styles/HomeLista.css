@@ -1,0 +1,20 @@
+* {
+    font-family: cursive
+}
+
+.zzk {
+    background-image: url('/wallpaper.jpg');
+}
+
+
+.card {
+    background-image: linear-gradient(#ffffff, #fcfcfc);
+    height: 100%;
+
+
+}
+
+.card-img-top {
+    border-radius: 16px;
+    object-fit: contain;
+}
