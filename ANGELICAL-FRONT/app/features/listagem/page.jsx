@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
-import Lista from '../../components/Lista';
 import { useRouter } from "next/navigation"
+import Lista from '../../components/Lista';
 
 
 
@@ -15,7 +15,7 @@ export default function Listagem() {
 
     useEffect(() => {
         async function loadVideos() {
-            const response = await fetch('http://localhost:3004/videos');
+            const response = await fetch('http://localhost:3004/cadastro');
             const data = await response.json();
             setVideos(data);
             setIsLoading(false);
@@ -24,7 +24,7 @@ export default function Listagem() {
     }, []);
 
     async function deleteVideo(id) {
-        const responde = await fetch('http://localhost:3004/videos/' + id, {
+        const responde = await fetch('http://localhost:3004/cadastro/' + id, {
             method: 'DELETE'
         })
         const atualizar = videos.filter(videos => videos.id !== id)
@@ -63,7 +63,7 @@ export default function Listagem() {
             <h2 className="mt-3">LISTA DOS VIDEOS</h2>
             <table className="table table-striped">
                 <thead>
-                    <tr>
+                    <tr className='text-black'>
                         <th scope="col">Imagem</th>
                         <th scope="col">Título</th>
                         <th scope="col">Data</th>

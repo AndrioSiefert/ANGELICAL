@@ -2,22 +2,22 @@ import React, { useContext } from "react";
 import { ClienteContext } from "app/contexts/cliente";
 import Link from "next/link";
 import LikesHeart from "./LikesHeart";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/HomeLista.css";
 
-export default function HomeLista({ videos }) {
+
+
+export default function verListaCliente({ videos }) {
     const { clienteId } = useContext(ClienteContext);
 
     return (
-        <div className="zzk card-group">
-            <div className="card">
-                <img src={videos.imagem} className="card-img-top" alt="videos" />
-                <div className="card-body">
-                    <h5 className="card-title">{videos.titulo}</h5>
-                    <p className="card-text">
+        <div className="p-2">
+            <div className="w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
+                <img src={videos.imagem} className='w-full h-full object-cover' alt="videos" />
+                <div>
+                    <h5 className="font-semibold overflow-ellipsis overflow-hidden">{videos.titulo}</h5>
+                    <p className="flex items-center gap-2 px-3 py-3 rounded-full text-xs bg-gradient-to-l">
                         {videos.data} - {videos.duracao}
                     </p>
-                    <p className='small'>
+                    <p className='text-sm  font-bold rounded-sm bg-gradient-to-t '>
                         {videos.descricao}
                     </p>
                 </div>

@@ -5,7 +5,7 @@ import { sequelize } from './database/data.js';
 import { Video } from './models/Video.js';
 
 const app = express();
-const port = 3000;
+const port = 3004;
 
 app.use(express.json())
 app.use(cors())

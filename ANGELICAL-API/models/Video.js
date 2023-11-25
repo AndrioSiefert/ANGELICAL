@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/data.js'
 
-export const Video = sequelize.define('video',{
+export const Video = sequelize.define('video', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,12 +11,8 @@ export const Video = sequelize.define('video',{
         type: DataTypes.STRING,
         allowNull: false,
     },
-    data: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
     duracao: {
-        type: DataTypes.TIME,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     soma: {

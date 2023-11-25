@@ -34,7 +34,6 @@ export default function Lista(props) {
             <td>{props.videos.titulo}</td>
             <td>{props.videos.data}</td>
             <td>{props.videos.duracao}</td>
-            <td>{props.videos.visibilidade}</td>
             <td>{props.videos.descricao}</td>
             <td>
                 <i className="bi bi-x-circle text-danger" style={{ fontSize: 24, cursor: 'pointer' }}
