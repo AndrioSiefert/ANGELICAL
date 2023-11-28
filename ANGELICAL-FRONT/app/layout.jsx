@@ -1,8 +1,11 @@
 
 import ClienteProvider from './contexts/cliente'
 import HomeCliente from './components/HomeCliente'
+
+
 import './styles/HomeCliente.css';
 import './styles/body.css';
+
 
 
 export const metadata = {
@@ -11,11 +14,13 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="pt-br" >
       <head >
         <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="shortcut icon" href="../angeloface.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/angeloface.png" type="image/x-icon" />
+
       </head>
       <body  >
 

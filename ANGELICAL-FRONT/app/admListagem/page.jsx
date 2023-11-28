@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
-import Lista from '../../components/Lista';
+import Lista from 'app/components/Lista';
 
 
 
@@ -59,18 +59,16 @@ export default function Listagem() {
 
 
     return (
-        <div className="container">
-            <h2 className="mt-3">LISTA DOS VIDEOS</h2>
-            <table className="table table-striped">
-                <thead>
+        <div className="p-5 h-screen bg-gray-500">
+            <h2 className="text-center mb-2 text-xl font-bold">GERENCIAR VÍDEOS</h2>
+            <table className="w-full">
+                <thead className='border-b-2 border-gray-200'>
                     <tr className='text-black'>
-                        <th scope="col">Imagem</th>
-                        <th scope="col">Título</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Duração</th>
-                        <th scope="col">Visibilidade</th>
-                        <th scope="col">Descrição</th>
-                        <th scope='col'>Administrar</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>IMAGEM</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>TÍTULO</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>DURAÇÃO</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>DESCRIÇÃO</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>ADMINISTRAR</th>
                     </tr>
                 </thead>
                 <tbody>

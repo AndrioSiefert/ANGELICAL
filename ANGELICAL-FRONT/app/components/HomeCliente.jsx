@@ -25,8 +25,10 @@ export default function HomeCliente() {
 
     return (
 
-        <div className="container  px-28 relative">
-            <nav className="flex items-center">
+
+        <div className="container bottom-2 lg:bottom-8 w-full z-50 mx-auto">
+
+            <nav className="flex items-center ">
                 <Link href='/'>
                     <img className='cursor-pointer w-20' src="angeloface.png" />
                 </Link>
@@ -39,19 +41,14 @@ export default function HomeCliente() {
                     </li>
                 </ul>
 
-                <div className='text-end'>
-                    <h5 className="text-white">
+                <div className='text-end mx-auto'>
+                    <h5 className="text-white flex ">
                         {clienteNome ? clienteNome : "Login"}
-                        {clienteNome ?
-                            <i style={{ cursor: 'pointer' }} onClick={logout}> <BsPersonWheelchair />  </i> :
-                            <Link href="/pages/login">
-                                <PiPerson className='text-7xl' />
-                                <i className=" text-white"></i>
-                            </Link>
+                        {clienteNome ? <i style={{ cursor: 'pointer' }} onClick={logout}> <BsPersonWheelchair className='text-2xl' />  </i> :
+                            <Link href="/login"><PiPerson className='text-2xl' /><i className=" text-white"></i></Link>
                         }
                     </h5>
                 </div>
-
             </nav>
         </div >
     )

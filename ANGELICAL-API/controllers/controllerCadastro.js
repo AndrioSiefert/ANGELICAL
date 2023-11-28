@@ -12,15 +12,15 @@ export const cadastroIndex = async (req, res) => {
 
 
 export const cadastroCreate = async (req, res) => {
-    const { titulo, duracao, soma, num, descricao, imagem } = req.body
+    const { titulo, data, gostei, descricao, imagem } = req.body
 
-    if (!titulo || !duracao || !soma || !num || !descricao || !imagem) {
+    if (!titulo || !data || !gostei || !descricao || !imagem) {
         res.status(400).json({ id: 0, msg: "Erro... Informe os dados" })
         return
     }
 
     try {
-        const novoVideo = await Video.create({ titulo, duracao, soma, num, descricao, imagem })
+        const novoVideo = await Video.create({ titulo, data, gostei, descricao, imagem })
         res.status(201).json(novoVideo)
     } catch (error) {
         res.status(400).send(error)

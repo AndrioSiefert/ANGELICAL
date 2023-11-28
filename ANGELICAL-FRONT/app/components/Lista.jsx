@@ -27,15 +27,12 @@ export default function Lista(props) {
 
 
     return (
-        <tr>
-            <td>
-                <img src={props.videos.imagem} width={200} />
-            </td>
-            <td>{props.videos.titulo}</td>
-            <td>{props.videos.data}</td>
-            <td>{props.videos.duracao}</td>
-            <td>{props.videos.descricao}</td>
-            <td>
+        <tr className=' bg-white text-black '>
+            <td className='p-3 text-sm font-semibold'><img src={props.videos.imagem} width={200} /></td>
+            <td className='p-3 text-sm font-semibold'>{props.videos.titulo}</td>
+            <td className='p-3 text-sm font-semibold'>{props.videos.data}</td>
+            <td className='p-3 text-sm font-semibold'>{props.videos.descricao}</td>
+            <td className='p-3 text-sm font-semibold'>
                 <i className="bi bi-x-circle text-danger" style={{ fontSize: 24, cursor: 'pointer' }}
                     onClick={() => confirmaExclusao(props.videos.id, props.videos.titulo)}
                     title="Excluir">

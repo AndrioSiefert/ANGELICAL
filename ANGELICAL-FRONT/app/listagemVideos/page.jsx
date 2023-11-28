@@ -28,10 +28,17 @@ export default function Home() {
 
 
     return (
-        <div className=' flex bg-gradient-to-tl from-[#ebe1e1]  via-[#f0b60a] '>
+
+
+
+        <div className=' flex bg-gradient-to-tl from-[#41407e]  via-[#9df7f7]  to-50%  '>
 
             {listaVideos}
+
         </div>
+
+
+
 
 
     )

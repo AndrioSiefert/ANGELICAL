@@ -11,15 +11,11 @@ export const Video = sequelize.define('video', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    duracao: {
+    data: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    soma: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    num: {
+    gostei: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
