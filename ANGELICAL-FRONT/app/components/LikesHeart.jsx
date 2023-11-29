@@ -1,6 +1,6 @@
-export default function LikesHeart({ videoId, soma, num }) {
+export default function LikesHeart({ videoId, gostei }) {
 
-    const likes = parseFloat(soma / num);
+    const likes = parseFloat(gostei)
 
     const heart = [];
 

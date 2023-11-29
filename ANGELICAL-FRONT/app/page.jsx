@@ -21,7 +21,7 @@ export default function Home() {
 
       <div className="mt-10">
         <Link className='bg-orange-400 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-orange-400 hover:text-white duration-300
-                hover:border border border-transparent' href='/listagemVideos'>ASSISTA AGORA!</Link>
+                hover:border border border-transparent' href='/clienteListagemVideos'>ASSISTA AGORA!</Link>
       </div>
 
       <div>

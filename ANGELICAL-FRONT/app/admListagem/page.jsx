@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
+import Link from 'next/link';
 import Lista from 'app/components/Lista';
 
 
@@ -59,7 +60,11 @@ export default function Listagem() {
 
 
     return (
+
         <div className="p-5 h-screen bg-gray-500">
+            <li className="list-none inline-block px-5" >
+                <Link className="no-underline text-white" href='/adm'>VOLTAR</Link>
+            </li>
             <h2 className="text-center mb-2 text-xl font-bold">GERENCIAR VÍDEOS</h2>
             <table className="w-full">
                 <thead className='border-b-2 border-gray-200'>

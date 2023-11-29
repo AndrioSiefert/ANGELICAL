@@ -26,11 +26,9 @@ export default function Login() {
         )
 
         if (response.status == 401) {
-            alert("Não está cadastrado")
+            alert("Coloque corratamente as suas informações")
         } else {
-            alert("Ok!")
             const cliente = await response.json()
-            console.log(cliente)
             mudaId(cliente.id)
             mudaNome(cliente.nome)
             localStorage.setItem("cliente_logado", JSON.stringify({ id: cliente.id, nome: cliente.nome }))

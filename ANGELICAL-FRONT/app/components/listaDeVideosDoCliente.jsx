@@ -6,7 +6,7 @@ import LikesHeart from "./LikesHeart";
 import { LuHeartHandshake } from "react-icons/lu";
 
 
-export default function verListaCliente({ videos }) {
+export default function ListaDeVideosPageCliente({ videos }) {
     const { clienteId } = useContext(ClienteContext);
 
     return (
@@ -27,13 +27,10 @@ export default function verListaCliente({ videos }) {
 
                 {clienteId &&
                     <div>
-                        <LikesHeart videoId={videos.id} soma={videos.soma} num={videos.num} />
-                        <div className="float-end">
-                            <Link href={"features/comentarios"}>
-                                <i className="bi bi-chat-dots text-primary fs-3 me-2" style={{ cursor: "pointer" }}></i>
-                            </Link>
-                            <Link href={"features/avaliar/" + videos.id}>
-                                <i className="bi bi-patch-plus text-danger fs-3 me-2" style={{ cursor: "pointer" }}> <LuHeartHandshake /></i>
+                        <LikesHeart videoId={videos.id} gostei={videos.gostei} />
+                        <div className="">
+                            <Link href={"/avaliar/" + videos.id}>
+                                <i className="" style={{ cursor: "pointer" }}> <LuHeartHandshake className="text-red-500 text-3xl" /></i>
                             </Link>
                         </div>
                     </div>

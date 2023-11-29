@@ -46,10 +46,6 @@ export default function Cadastro() {
                         <label htmlFor="duracao" className="text-white">Data</label>
                         <input type="text" className="border w-full py-1 mb-1 rounded-md" id="duracao" {...register("data")} required />
                     </div>
-                    <div className='my-2'>
-                        <label htmlFor="soma" className="text-white">Gostei</label>
-                        <input type="number" className="border w-full py-1 mb-1 rounded-md" id="soma" {...register("gostei")} required />
-                    </div>
                     <div className='' >
                         <label htmlFor="descricao" className="text-white">Descrição</label>
                         <textarea className="border w-full py-1 mb-1 rounded-md  row-auto" id="descricao"  {...register("descricao")} required></textarea>

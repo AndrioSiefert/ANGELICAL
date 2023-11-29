@@ -15,7 +15,7 @@ export default function Lista(props) {
             confirmButtontext: 'Sim, excluir!'
         }).then((result) => {
             if (result.isConfirmed) {
-                props.delete(id)
+                props.exclui(id)
                 Swal.fire(
                     'Excluído!',
                     'O vídeo foi excluído.',

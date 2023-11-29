@@ -15,10 +15,6 @@ export const Video = sequelize.define('video', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    gostei: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
     descricao: {
         type: DataTypes.STRING,
         allowNull: false,

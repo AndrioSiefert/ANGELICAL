@@ -12,15 +12,15 @@ export const cadastroIndex = async (req, res) => {
 
 
 export const cadastroCreate = async (req, res) => {
-    const { titulo, data, gostei, descricao, imagem } = req.body
+    const { titulo, data, descricao, imagem } = req.body
 
-    if (!titulo || !data || !gostei || !descricao || !imagem) {
+    if (!titulo || !data || !descricao || !imagem) {
         res.status(400).json({ id: 0, msg: "Erro... Informe os dados" })
         return
     }
 
     try {
-        const novoVideo = await Video.create({ titulo, data, gostei, descricao, imagem })
+        const novoVideo = await Video.create({ titulo, data, descricao, imagem })
         res.status(201).json(novoVideo)
     } catch (error) {
         res.status(400).send(error)
@@ -38,6 +38,19 @@ export const cadastroDelete = async (req, res) => {
         }
         await video.destroy()
         res.status(200).json({ id: 0, msg: "Video deletado com sucesso" })
+    } catch (error) {
+        res.status(400).send(error)
+    }
+
+
+}
+
+export const videoShow = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const video = await Video.findByPk(id)
+        res.status(200).json(video)
     } catch (error) {
         res.status(400).send(error)
     }

@@ -3,9 +3,7 @@ import { Cliente } from '../models/Cliente.js'
 export const clienteIndex = async (req, res) => {
 
     try {
-        if (req.user.tipo !== 'adm') {
-            return res.status(403).json({ message: 'Acesso Negado' });
-        }
+
 
         const clientes = await Cliente.findAll();
         res.status(200).json(clientes)
@@ -15,14 +13,14 @@ export const clienteIndex = async (req, res) => {
 }
 
 export const createCliente = async (req, res) => {
-    const { nome, email, senha } = req.body
+    const { nome, email, senha, tipo } = req.body
 
     if (!nome || !email || !senha) {
         return res.status(400).send({ message: 'Dados inválidos' })
     }
 
     try {
-        const criarCliente = await Cliente.create({ nome, email, senha })
+        const criarCliente = await Cliente.create({ nome, email, senha, tipo })
         res.status(201).json(criarCliente)
     } catch (error) {
         res.status(400).send(error)

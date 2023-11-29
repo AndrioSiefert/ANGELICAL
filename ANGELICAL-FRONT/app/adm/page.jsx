@@ -25,6 +25,7 @@ export default function admin() {
                     <li className="list-none inline-block px-5" >
                         <Link className="no-underline text-white" href='/admListagem'>GERENCIAR</Link>
                     </li>
+
                 </ul>
 
 

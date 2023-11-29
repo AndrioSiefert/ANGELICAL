@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
-import verListaCliente from "app/components/verListaCliente"
+import ListaDeVideosPageCliente from "app/components/listaDeVideosDoCliente"
 
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
 
     useEffect(() => {
         async function getVideos() {
-            const response = await fetch('http://localhost:3004/cadastro')
+            const response = await fetch('http://localhost:3004/video')
             const data = await response.json()
             setVideos(data)
         }
@@ -18,10 +18,11 @@ export default function Home() {
 
 
     const listaVideos = videos.map(video => (
-        verListaCliente({
+        ListaDeVideosPageCliente({
             key: video.id,
             videos: video,
         })
+
     ));
 
 
@@ -31,7 +32,7 @@ export default function Home() {
 
 
 
-        <div className=' flex bg-gradient-to-tl from-[#41407e]  via-[#9df7f7]  to-50%  '>
+        <div className=' flex bg-gradient-to-l from-[#e4b5e0]  via-[#e4e4e4] to-[#eec0c0] '>
 
             {listaVideos}
 

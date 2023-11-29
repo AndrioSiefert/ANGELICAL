@@ -7,7 +7,6 @@ function ClienteProvider({ children }) {
 
     const [clienteId, setClienteId] = useState(null);
     const [clienteNome, setClienteNome] = useState("");
-    const [isAdmin, setIsAdmin] = useState("");
 
     useEffect(() => {
         if (localStorage.getItem("cliente_logado")) {
@@ -15,8 +14,7 @@ function ClienteProvider({ children }) {
             console.log('Cliente logado:', cliente);
             setClienteId(cliente.id);
             setClienteNome(cliente.nome);
-            setIsAdmin(cliente.tipo);
-            console.log('isAdmin:', isAdmin); // Verifique o valor de isAdmin após a atualização
+
         }
     }, []);
 
@@ -32,7 +30,7 @@ function ClienteProvider({ children }) {
 
 
     return (
-        <ClienteContext.Provider value={{ clienteId, clienteNome, isAdmin, mudaId, mudaNome }}>
+        <ClienteContext.Provider value={{ clienteId, clienteNome, mudaId, mudaNome }}>
             {children}
         </ClienteContext.Provider>
     )
