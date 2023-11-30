@@ -76,8 +76,6 @@ export const avaliacaoDestroy = async (req, res) => {
         const avaliacao = await Avaliacao.findByPk(id)
 
 
-
-
         await Avaliacao.destroy({
             where: { id }
         });
@@ -92,3 +90,30 @@ export const avaliacaoDestroy = async (req, res) => {
 
     }
 }
+
+export const avaliacaoGraph = async (req, res) => {
+    try {
+        const totalAvaliacoes = await Avaliacao.count();
+        res.status(200).json({ totalAvaliacoes });
+    } catch (error) {
+        res.status(400).json({ error: "Erro ao obter total de avaliações" });
+    }
+};
+
+export const dadosGerais = async (req, res) => {
+
+
+
+    try {
+        const clientes = await Cliente.count()
+        const video = await Video.count()
+        const avaliacoes = await Avaliacao.count()
+
+
+        res.status(200).json({ clientes, video, avaliacoes, })
+    } catch (error) {
+        res.status(400).send(error)
+    }
+}
+
+

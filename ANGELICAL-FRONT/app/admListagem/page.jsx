@@ -16,7 +16,7 @@ export default function Listagem() {
 
     useEffect(() => {
         async function loadVideos() {
-            const response = await fetch('http://localhost:3004/cadastro');
+            const response = await fetch('http://localhost:3004/video');
             const data = await response.json();
             setVideos(data);
             setIsLoading(false);
@@ -24,12 +24,13 @@ export default function Listagem() {
         loadVideos();
     }, []);
 
-    async function deleteVideo(id) {
-        const responde = await fetch('http://localhost:3004/cadastro/' + id, {
-            method: 'DELETE'
+
+    async function excluiFilme(id) {
+        const response = await fetch("http://localhost:3004/video/" + id, {
+            method: "DELETE"
         })
-        const atualizar = videos.filter(videos => videos.id !== id)
-        setVideos(atualizar)
+        const novosDados = videos.filter(video => video.id != id)
+        setVideos(novosDados)
     }
 
 
@@ -37,7 +38,7 @@ export default function Listagem() {
         <Lista
             key={videos.id}
             videos={videos}
-            exclui={() => deleteVideo(videos.id)}
+            exclui={() => excluiFilme(videos.id)}
             altera={() => router.push('altera/' + videos.id)}
         />
 

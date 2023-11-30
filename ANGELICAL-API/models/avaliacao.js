@@ -11,7 +11,6 @@ export const Avaliacao = sequelize.define('avaliacao', {
     },
     comentario: {
         type: DataTypes.STRING,
-        allowNull: false
     }
 }, {
     tableName: "avaliacoes"

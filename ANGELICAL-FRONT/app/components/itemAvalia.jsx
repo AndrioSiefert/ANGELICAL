@@ -30,7 +30,7 @@ export default function ItemAvalia(props) {
     return (
         <tr>
             <td>
-                <img src={props.avalia.video.capa} alt={`Capa de ${props.avalia.video.titulo}`} width={60} />
+                <img src={props.avalia.video.imagem} alt={`Capa de ${props.avalia.video.titulo}`} width={60} />
             </td>
             <td>{props.avalia.video.titulo}</td>
             <td>{props.avalia.cliente.nome}</td>

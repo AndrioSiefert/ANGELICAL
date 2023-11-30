@@ -14,7 +14,7 @@ export default function Cadastro() {
 
     async function onSubmit(data) {
         //    console.log(data);
-        const video = await fetch("http://localhost:3004/cadastro", {
+        const video = await fetch("http://localhost:3004/video", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({ ...data }),
