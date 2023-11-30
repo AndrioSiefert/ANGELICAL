@@ -44,25 +44,24 @@ export default function Avaliacoes() {
     }
 
     return (
-        <div className="bg-white">
-            <h2 className="mt-2">
-                <img src={video.imagem} alt="Capa" width={100} />
-                <span className="ms-3">
+        <div className="bg-white m-auto text-center flex-col flex">
+            <h2 className="m-auto">
+                <img src={video.imagem} alt="Capa" />
+                <span className="">
                     Avaliações dos Clientes
                 </span>
             </h2>
             <h3>
-                <span className="ms-3">
+                <span className="">
                     video: {video.titulo}
                 </span>
             </h3>
 
-            <table className="table table-striped">
+            <table className="m-auto">
                 <thead>
                     <tr>
-                        <th>Nome do Cliente</th>
-                        <th>Avaliação</th>
-                        <th>Comentário</th>
+                        <th className="p-3 text-sm font-semibold">Nome do Cliente</th>
+                        <th className="p-3 text-sm font-semibold">Comentário</th>
                     </tr>
                 </thead>
                 <tbody>

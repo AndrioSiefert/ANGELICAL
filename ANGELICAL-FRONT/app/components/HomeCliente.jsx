@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { PiPerson } from "react-icons/pi";
-import { BsPersonWheelchair } from "react-icons/bs";
+import { GiExitDoor } from "react-icons/gi";
+
 
 import { useContext } from 'react';
 import { ClienteContext } from 'app/contexts/cliente';
@@ -44,7 +45,7 @@ export default function HomeCliente() {
                 <div className='text-end mx-auto'>
                     <h5 className="text-white flex ">
                         {clienteNome ? clienteNome : "Login"}
-                        {clienteNome ? <i style={{ cursor: 'pointer' }} onClick={logout}> <BsPersonWheelchair className='text-2xl' />  </i> :
+                        {clienteNome ? <i style={{ cursor: 'pointer' }} onClick={logout}> <GiExitDoor className='text-2xl' />  </i> :
                             <Link href="/login"><PiPerson className='text-2xl' /><i className=" text-white"></i></Link>
                         }
                     </h5>
