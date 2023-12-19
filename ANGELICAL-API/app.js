@@ -3,9 +3,11 @@ import cors from 'cors';
 import routes from './routes.js';
 import { sequelize } from './database/data.js';
 import { Video } from './models/Video.js';
+import { Cliente } from './models/Cliente.js';
+import { Avaliacao } from './models/Avaliacao.js';
 
 const app = express();
-const port = 3000;
+const port = 3004;
 
 app.use(express.json())
 app.use(cors())
@@ -15,6 +17,8 @@ const conecta_db = async () => {
     try {
         await sequelize.authenticate();
         await Video.sync()
+        await Cliente.sync()
+        await Avaliacao.sync()
     }
     catch (error) {
         console.error("Erro na Conexão", error);

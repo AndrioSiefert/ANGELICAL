@@ -1,33 +1,48 @@
 'use client'
-import { useForm } from 'react-hook-form';
+import { useParams } from "next/navigation"
+import { useEffect } from "react"
+import { useForm } from "react-hook-form"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
+export default function Altera() {
+    const params = useParams();
 
 
-export default function Cadastro() {
-    const { register, handleSubmit, reset } = useForm({
-    });
+    const { register, handleSubmit, setValue } = useForm();
+
+    useEffect(() => {
+        async function getvideos() {
+            const response = await fetch('http://localhost:3004/cadastro/' + params.id)
+            const dado = await response.json()
+            setValue("titulo", dado.titulo)
+            setValue("data", dado.data)
+            setValue("descricao", dado.descricao)
+            setValue("imagem", dado.imagem)
+            setValue("gostei", dado.dostei)
+
+        }
+        getvideos()
+    }, [])
 
 
     async function onSubmit(data) {
-        const videos = await fetch('http://localhost:3004/videos', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
+        const videos = await fetch("http://localhost:3004/cadastro/" + params.id,
+            {
+                method: "PUT",
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify({ ...data })
             },
-            body: JSON.stringify({ ...data })
-        })
-
-        if (videos.status === 201) {
-            alert('Video cadastrado com sucesso!');
-            reset();
+        )
+        if (videos.status == 200) {
+            toast.success("Alteração concluída com sucesso!")
         } else {
-            alert('Erro ao cadastrar o video!');
+
+            toast.error("Erro ao alterar o vídeo!")
         }
     }
-
-
 
     return (
         <div className="container">
@@ -78,8 +93,25 @@ export default function Cadastro() {
 
 
                 <input type="submit" className="btn btn-primary me-2" value="Salvar" />
-                <input type="reset" className="btn btn-secondary" value="Limpar" />
+                <input type="reset" className="btn btn-secondary" value="Limpar"
+                />
+
             </form>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     )
+
+
+
 }
